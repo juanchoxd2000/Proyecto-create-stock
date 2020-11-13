@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import "./data/clientes"
+import clientes from './data/clientes';
+
+function TarjetaCliente (props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+          <li>
+              nombre={clientes[props].nombre}
+          </li>
+          <li>
+              edad={clientes[props].edad}
+          </li>
+          <li>
+              fechaIngreso={clientes[props].fechaIngreso}
+          </li>
+      </ul>
+  );
+}
+
+function App() {
+  console.log(clientes)
+  return (
+    <div>
+      <h1>Listado de clientes activos</h1>
+      <TarjetaCliente />
     </div>
   );
 }
