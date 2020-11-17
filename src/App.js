@@ -5,11 +5,21 @@ import clientes from './data/clientes';
 
 
 function App() {
-  console.log(clientes)
+  console.log(clientes);
+  function CrearTarjetaCliente(cliente){
+    return(<div>
+            <TarjetaCliente  />
+          </div>
+    );
+  };
+  const listaDeClientes = clientes.map(function (){
+    return (<CrearTarjetaCliente  />);
+  });
   return (
     <div>
-      <h1>Listado de clientes activos</h1>
-      <TarjetaCliente />
+      <h1>Listado de clientes activos{listaDeClientes}</h1>
+      <CrearTarjetaCliente  />
+      
     </div>
   );
 }

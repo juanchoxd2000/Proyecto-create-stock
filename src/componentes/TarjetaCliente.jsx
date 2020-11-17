@@ -1,7 +1,8 @@
 import React from "react";
 import clientes from "../data/clientes";
 
-function TarjetaCliente() {
+function TarjetaCliente(props) {
+    
     return (
         <ul>
             <li>
