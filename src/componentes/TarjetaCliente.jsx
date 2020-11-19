@@ -1,18 +1,17 @@
 import React from "react";
-import clientes from "../data/clientes";
 
 function TarjetaCliente(props) {
     
     return (
         <ul>
             <li>
-                Nombre = {clientes[0].nombre}
+                Nombre : {props.nombre || "No hay datos"}
             </li>
             <li>
-                Edad = {clientes[0].edad}
+                Edad : {props.edad || "No hay datos"}
             </li>
             <li>
-                Fecha de ingreso = {clientes[0].fechaIngreso}
+                Fecha de ingreso : {props.fechaIngreso || "No hay datos"}
             </li>
         </ul>
     );

@@ -1,25 +1,23 @@
 import './App.css';
 import TarjetaCliente from "./componentes/TarjetaCliente"
-import "./data/clientes"
 import clientes from './data/clientes';
 
+function crearTarjetaCliente(clientes){
+  return(<div>
+          <TarjetaCliente nombre={clientes.nombre} edad={clientes.edad} fechaIngreso={clientes.fechaIngreso} />
+        </div>
+  );
+};
 
-function App() {
+const listaDeClientes = clientes.map(crearTarjetaCliente);
+
+
+function App(props) {
   console.log(clientes);
-  function CrearTarjetaCliente(cliente){
-    return(<div>
-            <TarjetaCliente  />
-          </div>
-    );
-  };
-  const listaDeClientes = clientes.map(function (){
-    return (<CrearTarjetaCliente  />);
-  });
   return (
-    <div>
-      <h1>Listado de clientes activos{listaDeClientes}</h1>
-      <CrearTarjetaCliente  />
-      
+    <div className = "App">
+      <h1>Listado de clientes activos</h1>
+      {listaDeClientes}
     </div>
   );
 }
